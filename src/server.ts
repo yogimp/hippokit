@@ -10,9 +10,9 @@ const start = async () => {
         initOptions: {
             express: app,
             onInit: async (cms) => {
-                cms.logger.info(`Admin URL ${cms.getAdminURL()}`)
-            }
-        }
+                cms.logger.info(`Admin URL: ${cms.getAdminURL()}`)
+            },
+        },
     })
 
     app.use((req, res) => nextHandler(req, res))
@@ -22,7 +22,7 @@ const start = async () => {
 
         app.listen(PORT, async () => {
             payload.logger.info(
-            `Next.js App URL: ${process.env.NEXT_PUBLIC_SERVER_URL}`
+                `Next.js App URL: ${process.env.NEXT_PUBLIC_SERVER_URL}`
             )
         })
     })
